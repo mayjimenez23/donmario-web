@@ -18,6 +18,8 @@ const MENU = {
     { id: "picante",    name: "Picante",    priceGs: 1000, type: "unit" },
     { id: "catupollo",  name: "Catupollo",  priceGs: 1000, type: "unit" },
     { id: "huevo",      name: "Huevo",      priceGs: 1000, type: "unit" },
+    { id: "mandioca",   name: "Mandioca",   priceGs: 2000, type: "unit" },
+    { id: "napolitana", name: "Napolitana", priceGs: 1000, type: "unit" }, 
   ],
   milanesitas: [
     { id: "milanesita", name: "Milanesita", priceGs: 1000, type: "unit" },
