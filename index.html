@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Empanadas Don Mario — empanadas fritas, milanesitas y croquetitas a Gs. 1.000 c/u. Milanesas crudas por kilo. San Lorenzo, Paraguay. Pedidos por WhatsApp." />
+  <meta name="theme-color" content="#D17A2A" />
+  <title>Empanadas Don Mario · Hechas con cariño desde casa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:opsz,wght,SOFT@9..144,400..900,0..100&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="bg-spice" aria-hidden="true"></div>
+
+  <!-- ============= HEADER ============= -->
+  <header class="nav" role="banner">
+    <a class="nav__brand" href="#hero" aria-label="Inicio">
+      <img src="assets/logo.png" alt="" class="nav__logo" />
+      <span class="nav__brand-text">don mario</span>
+    </a>
+    <nav class="nav__links" aria-label="Secciones">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#menu">Menú</a>
+      <a href="#como-pedir">Cómo pedir</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#" class="nav__cta" id="navCta">Pedir<span aria-hidden="true"> →</span></a>
+  </header>
+
+  <!-- ============= HERO ============= -->
+  <section id="hero" class="hero">
+    <div class="hero__copy">
+      <p class="hero__eyebrow">artesanal · san lorenzo, py</p>
+      <h1 class="hero__title">
+        <span class="hero__title-line">Empanadas</span>
+        <span class="hero__title-line hero__title-line--italic">Don Mario</span>
+      </h1>
+      <p class="hero__slogan">hechas con cariño desde casa</p>
+      <p class="hero__lede">
+        Empanadas fritas recién hechas, milanesitas y croquetitas a Gs.&nbsp;1.000 c/u.
+        Milanesas crudas por kilo para que las frías vos en casa.
+      </p>
+      <div class="hero__ctas">
+        <a href="#menu" class="btn btn--primary">Ver el menú</a>
+        <a href="#como-pedir" class="btn btn--ghost">Cómo se pide</a>
+      </div>
+    </div>
+
+    <div class="hero__art" aria-hidden="true">
+      <div class="hero__art-disc">
+        <div class="hero__art-ring"></div>
+        <img src="assets/logo.png" alt="" class="hero__art-logo" />
+      </div>
+      <span class="hero__art-tag hero__art-tag--top">recién fritas</span>
+      <span class="hero__art-tag hero__art-tag--bottom">Gs. 1.000 c/u</span>
+    </div>
+  </section>
+
+  <!-- ============= NOSOTROS ============= -->
+  <section id="nosotros" class="about">
+    <div class="about__left">
+      <div class="about__quotebox">
+        <p class="about__quote">
+          “Empezamos en la cocina de casa, con una receta de empanada de carne
+          que viene de la abuela. Hoy seguimos amasando una por una.”
+        </p>
+        <p class="about__quote-by">— Don Mario</p>
+      </div>
+    </div>
+    <div class="about__right">
+      <p class="about__eyebrow">quiénes somos</p>
+      <h2 class="about__title">Comida casera, sin atajos.</h2>
+      <p class="about__body">
+        Empanadas Don Mario es un emprendimiento familiar paraguayo en San
+        Lorenzo. Hacemos <strong>empanadas fritas</strong> en 7 sabores
+        (carne, pollo, choclo, J&amp;Q, picante, catupollo, huevo) y también
+        <strong>milanesitas y croquetitas</strong>. Todo a Gs.&nbsp;1.000 la unidad.
+      </p>
+      <p class="about__body">
+        Para llevar a freír en casa, vendemos <strong>milanesas crudas por kilo</strong>
+        de pollo (Gs.&nbsp;25.000), mondongo (Gs.&nbsp;35.000) y de carne (Gs.&nbsp;50.000,
+        sólo bajo pedido).
+      </p>
+      <a href="#menu" class="btn btn--dark">Ver lo que hay hoy</a>
+    </div>
+  </section>
+
+  <!-- ============= MENÚ ============= -->
+  <section id="menu" class="menu">
+    <header class="menu__head">
+      <p class="menu__eyebrow">el menú</p>
+      <h2 class="menu__title">Tocá <em>+</em> a lo que querés.<br/>Armamos tu pedido y lo mandamos por WhatsApp.</h2>
+    </header>
+
+    <!-- BOCADITOS (a la unidad) -->
+    <div class="menu__group">
+      <div class="menu__group-head">
+        <h3 class="menu__group-title">Bocaditos</h3>
+        <p class="menu__group-price">Gs. 1.000 <span>la unidad</span></p>
+      </div>
+
+      <!-- EMPANADAS - bloque expandible -->
+      <details class="group" data-group="empanadas" open>
+        <summary class="group__head">
+          <span class="group__icon" aria-hidden="true">🥟</span>
+          <div class="group__title-block">
+            <h4 class="group__title">Empanadas <em>fritas</em></h4>
+            <p class="group__hint">7 sabores · tocá para abrir</p>
+          </div>
+          <span class="group__count" aria-live="polite"></span>
+          <span class="group__chevron" aria-hidden="true">▾</span>
+        </summary>
+        <div class="menu__grid" id="grid-empanadas"></div>
+      </details>
+
+      <!-- MILANESITAS -->
+      <details class="group" data-group="milanesitas">
+        <summary class="group__head">
+          <span class="group__icon" aria-hidden="true">🍗</span>
+          <div class="group__title-block">
+            <h4 class="group__title">Milanesitas</h4>
+            <p class="group__hint">individual, lista para comer</p>
+          </div>
+          <span class="group__count" aria-live="polite"></span>
+          <span class="group__chevron" aria-hidden="true">▾</span>
+        </summary>
+        <div class="menu__grid" id="grid-milanesitas"></div>
+      </details>
+
+      <!-- CROQUETITAS -->
+      <details class="group" data-group="croquetitas">
+        <summary class="group__head">
+          <span class="group__icon" aria-hidden="true">🥔</span>
+          <div class="group__title-block">
+            <h4 class="group__title">Croquetitas</h4>
+            <p class="group__hint">individual, lista para comer</p>
+          </div>
+          <span class="group__count" aria-live="polite"></span>
+          <span class="group__chevron" aria-hidden="true">▾</span>
+        </summary>
+        <div class="menu__grid" id="grid-croquetitas"></div>
+      </details>
+    </div>
+
+    <!-- MILANESAS CRUDAS POR KILO -->
+    <div class="menu__group menu__group--alt" data-group="milanesasKg">
+      <div class="menu__group-head">
+        <h3 class="menu__group-title">Milanesas crudas <em>por kilo</em></h3>
+        <p class="menu__group-price">para freír en casa</p>
+      </div>
+      <p class="menu__group-note">
+        La de carne va sólo bajo pedido — avisanos con tiempo así te la preparamos.
+        <span class="group__count" aria-live="polite"></span>
+      </p>
+      <div class="menu__grid menu__grid--two" id="grid-milanesas"></div>
+    </div>
+  </section>
+
+  <!-- ============= CÓMO PEDIR ============= -->
+  <section id="como-pedir" class="howto">
+    <p class="howto__eyebrow">cómo pedir</p>
+    <h2 class="howto__title">Tres pasos. Todo por WhatsApp.</h2>
+
+    <ol class="howto__steps">
+      <li class="howto__step">
+        <span class="howto__num">01</span>
+        <h3>Elegís acá</h3>
+        <p>Tocás los + de cada producto del menú. El carrito de abajo te va sumando solo.</p>
+      </li>
+      <li class="howto__step">
+        <span class="howto__num">02</span>
+        <h3>Pedís por WhatsApp</h3>
+        <p>Apretás el botón verde y se abre WhatsApp con el pedido escrito. Vos sólo confirmás y mandás.</p>
+      </li>
+      <li class="howto__step">
+        <span class="howto__num">03</span>
+        <h3>Pasás a buscar</h3>
+        <p>Te avisamos cuándo está pronto. Coordinamos hora y forma de pago por chat.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============= FOOTER / CONTACTO ============= -->
+  <footer id="contacto" class="footer">
+    <div class="footer__left">
+      <p class="footer__eyebrow">empanadas don mario</p>
+      <h2 class="footer__title">Cocinamos<br/><em>todos los días</em>.</h2>
+      <p class="footer__slogan">hechas con cariño desde casa</p>
+    </div>
+
+    <div class="footer__right">
+      <div class="footer__block">
+        <h4>Horarios</h4>
+        <p>Todos los días</p>
+        <p><strong>07:00 – 21:00</strong></p>
+      </div>
+
+      <div class="footer__block">
+        <h4>WhatsApp</h4>
+        <a href="#" id="footerWa" class="footer__wa">+595 ···· ····</a>
+        <p class="footer__hint">tocá para escribirnos</p>
+      </div>
+
+      <div class="footer__block footer__block--wide">
+        <h4>Dónde estamos</h4>
+        <p><strong>Arnaldo Bacigalupo</strong></p>
+        <p>San Lorenzo · Paraguay</p>
+        <a href="https://maps.google.com/maps?q=Arnaldo+Bacigalupo,+San+Lorenzo,+Paraguay" target="_blank" rel="noopener">Ver en Google Maps →</a>
+
+        <div class="footer__map">
+          <iframe
+            title="Ubicación de Empanadas Don Mario en Google Maps"
+            src="https://maps.google.com/maps?q=Arnaldo+Bacigalupo,+San+Lorenzo,+Paraguay&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <p class="footer__credits">
+        © <span id="year"></span> Empanadas Don Mario · San Lorenzo, Paraguay
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============= STICKY CART ============= -->
+  <aside class="cart" id="cart" aria-live="polite" hidden>
+    <div class="cart__inner">
+      <div class="cart__summary">
+        <p class="cart__count"><span id="cartCount">0</span> ítems</p>
+        <p class="cart__total">
+          <span>Estimado</span>
+          <strong id="cartTotal">Gs. 0</strong>
+        </p>
+      </div>
+      <a href="#" class="cart__cta" id="cartCta">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+          <path d="M17.5 14.4l-2.6-1.3c-.4-.2-.8-.1-1 .2l-.9 1.1c-1.4-.7-2.6-1.9-3.3-3.3l1.1-.9c.3-.2.4-.6.2-1L9.6 6.5C9.4 6.1 9 6 8.6 6.2L6.2 7.3C5.9 7.4 5.7 7.8 5.8 8.2c.6 5.4 4.6 9.4 10 10 .4.1.7-.1.8-.5l1.1-2.3c.2-.4.1-.8-.2-1zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.5-1.2C8.8 21.5 10.4 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/>
+        </svg>
+        Pedir por WhatsApp
+      </a>
+    </div>
+  </aside>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
