@@ -259,6 +259,7 @@ const modal = document.getElementById("checkoutModal");
 const form = document.getElementById("checkoutForm");
 const inputName = document.getElementById("customerName");
 const inputTime = document.getElementById("pickupTime");
+const inputPhone = document.getElementById("customerPhone");
 const modalSummary = document.getElementById("modalSummary");
 const modalSubmit = document.getElementById("modalSubmit");
 
@@ -344,25 +345,25 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   const name = inputName.value.trim();
   const time = inputTime.value;
+  const phone = inputPhone.value.trim();
 
-  if (!name || !time) {
-    if (!name) inputName.focus();
-    else inputTime.focus();
-    return;
-  }
+  if (!name)  { inputName.focus();  return; }
+  if (!phone) { inputPhone.focus(); return; }
+  if (!time)  { inputTime.focus();  return; }
 
   closeCheckout();
-  openWhatsApp({ name, time });
+  openWhatsApp({ name, phone, time });
 });
 
 /* ============================================================
    Construcción del mensaje de WhatsApp
    ============================================================ */
-function buildWhatsAppMessage({ name, time }) {
+function buildWhatsAppMessage({ name, phone, time }) {
   const lines = [];
   lines.push("🥟 *Pedido para Empanadas Don Mario*");
   lines.push("");
   lines.push(`*Cliente:* ${name}`);
+  if (phone) lines.push(`*Contacto:* ${phone}`);
   lines.push(`*Retiro estimado:* ${time} hs`);
   lines.push("");
 
@@ -409,9 +410,9 @@ function buildWhatsAppMessage({ name, time }) {
   return lines.join("\n");
 }
 
-function openWhatsApp({ name, time } = {}) {
+function openWhatsApp({ name, phone, time } = {}) {
   const text = name && time
-    ? buildWhatsAppMessage({ name, time })
+    ? buildWhatsAppMessage({ name, phone, time })
     : "Hola Don Mario, me gustaría hacer un pedido.";
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
   window.open(url, "_blank", "noopener");

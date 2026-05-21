@@ -61,7 +61,7 @@
         <img src="assets/logo.png" alt="" class="hero__art-logo" />
       </div>
       <span class="hero__art-tag hero__art-tag--top">recién fritas</span>
-      <span class="hero__art-tag hero__art-tag--bottom">Gs. 1.000 c/u</span>
+      <span class="hero__art-tag hero__art-tag--bottom">desde Gs. 1.000 c/u</span>
     </div>
   </section>
 
@@ -81,9 +81,10 @@
       <h2 class="about__title">Comida casera, sin atajos.</h2>
       <p class="about__body">
         Empanadas Don Mario es un emprendimiento familiar paraguayo en San
-        Lorenzo. Hacemos <strong>empanadas fritas</strong> en más de 6 sabores
-        (carne, pollo, choclo, J&amp;Q, picante, catupollo, huevo, napolitana) y también
-        <strong>milanesitas y croquetitas</strong>. Todo a Gs.&nbsp;1.000 la unidad.
+        Lorenzo. Hacemos <strong>empanadas fritas</strong> en 9 sabores
+        (carne, pollo, choclo, J&amp;Q, picante, catupollo, huevo, mandioca,
+        napolitana) y también <strong>milanesitas y croquetitas</strong>.
+        Casi todo a Gs.&nbsp;1.000 la unidad (la de mandioca, Gs.&nbsp;2.000).
       </p>
       <p class="about__body">
         Para llevar a freír en casa, vendemos <strong>milanesas crudas por kilo</strong>
@@ -101,64 +102,88 @@
       <h2 class="menu__title">Tocá <em>+</em> a lo que querés.<br/>Armamos tu pedido y lo mandamos por WhatsApp.</h2>
     </header>
 
-    <!-- BOCADITOS -->
-    <div class="menu__group">
-      <div class="menu__group-head">
-        <h3 class="menu__group-title">Bocaditos</h3>
-        <p class="menu__group-price">Gs. 1.000 <span>la unidad</span></p>
+    <div class="menu__layout">
+      <div class="menu__content">
+        <!-- BOCADITOS -->
+        <div class="menu__group">
+          <div class="menu__group-head">
+            <h3 class="menu__group-title">Bocaditos</h3>
+            <p class="menu__group-price">desde Gs. 1.000 <span>la unidad</span></p>
+          </div>
+
+          <details class="group" data-group="empanadas" open>
+            <summary class="group__head">
+              <span class="group__icon" aria-hidden="true">🥟</span>
+              <div class="group__title-block">
+                <h4 class="group__title">Empanadas <em>fritas</em></h4>
+                <p class="group__hint">9 sabores · tocá para abrir</p>
+              </div>
+              <span class="group__count" aria-live="polite"></span>
+              <span class="group__chevron" aria-hidden="true">▾</span>
+            </summary>
+            <div class="menu__grid" id="grid-empanadas"></div>
+          </details>
+
+          <details class="group" data-group="milanesitas">
+            <summary class="group__head">
+              <span class="group__icon" aria-hidden="true">🍗</span>
+              <div class="group__title-block">
+                <h4 class="group__title">Milanesitas</h4>
+                <p class="group__hint">individual, lista para comer</p>
+              </div>
+              <span class="group__count" aria-live="polite"></span>
+              <span class="group__chevron" aria-hidden="true">▾</span>
+            </summary>
+            <div class="menu__grid" id="grid-milanesitas"></div>
+          </details>
+
+          <details class="group" data-group="croquetitas">
+            <summary class="group__head">
+              <span class="group__icon" aria-hidden="true">🥔</span>
+              <div class="group__title-block">
+                <h4 class="group__title">Croquetitas</h4>
+                <p class="group__hint">individual, lista para comer</p>
+              </div>
+              <span class="group__count" aria-live="polite"></span>
+              <span class="group__chevron" aria-hidden="true">▾</span>
+            </summary>
+            <div class="menu__grid" id="grid-croquetitas"></div>
+          </details>
+        </div>
+
+        <!-- MILANESAS CRUDAS POR KILO -->
+        <div class="menu__group menu__group--alt" data-group="milanesasKg">
+          <div class="menu__group-head">
+            <h3 class="menu__group-title">Milanesas crudas <em>por kilo</em></h3>
+            <p class="menu__group-price">para freír en casa</p>
+          </div>
+          <p class="menu__group-note">
+            La de carne va sólo bajo pedido — avisanos con tiempo así te la preparamos.
+            <span class="group__count" aria-live="polite"></span>
+          </p>
+          <div class="menu__grid menu__grid--two" id="grid-milanesas"></div>
+        </div>
       </div>
 
-      <details class="group" data-group="empanadas" open>
-        <summary class="group__head">
-          <span class="group__icon" aria-hidden="true">🥟</span>
-          <div class="group__title-block">
-            <h4 class="group__title">Empanadas <em>fritas</em></h4>
-            <p class="group__hint">sabores · tocá para abrir</p>
+      <!-- ====== CART STICKY (al lado del menú, no abajo de todo) ====== -->
+      <aside class="cart" id="cart" aria-live="polite" hidden>
+        <div class="cart__inner">
+          <p class="cart__title">Tu pedido</p>
+          <div class="cart__summary">
+            <p class="cart__count"><span id="cartCount">0</span> ítems</p>
+            <p class="cart__total">
+              <span>Estimado</span>
+              <strong id="cartTotal">Gs. 0</strong>
+            </p>
           </div>
-          <span class="group__count" aria-live="polite"></span>
-          <span class="group__chevron" aria-hidden="true">▾</span>
-        </summary>
-        <div class="menu__grid" id="grid-empanadas"></div>
-      </details>
-
-      <details class="group" data-group="milanesitas">
-        <summary class="group__head">
-          <span class="group__icon" aria-hidden="true">🍗</span>
-          <div class="group__title-block">
-            <h4 class="group__title">Milanesitas</h4>
-            <p class="group__hint">individual, lista para comer</p>
-          </div>
-          <span class="group__count" aria-live="polite"></span>
-          <span class="group__chevron" aria-hidden="true">▾</span>
-        </summary>
-        <div class="menu__grid" id="grid-milanesitas"></div>
-      </details>
-
-      <details class="group" data-group="croquetitas">
-        <summary class="group__head">
-          <span class="group__icon" aria-hidden="true">🥔</span>
-          <div class="group__title-block">
-            <h4 class="group__title">Croquetitas</h4>
-            <p class="group__hint">individual, lista para comer</p>
-          </div>
-          <span class="group__count" aria-live="polite"></span>
-          <span class="group__chevron" aria-hidden="true">▾</span>
-        </summary>
-        <div class="menu__grid" id="grid-croquetitas"></div>
-      </details>
-    </div>
-
-    <!-- MILANESAS CRUDAS POR KILO -->
-    <div class="menu__group menu__group--alt" data-group="milanesasKg">
-      <div class="menu__group-head">
-        <h3 class="menu__group-title">Milanesas crudas <em>por kilo</em></h3>
-        <p class="menu__group-price">para freír en casa</p>
-      </div>
-      <p class="menu__group-note">
-        La de carne va sólo bajo pedido — avisanos con tiempo así te la preparamos.
-        <span class="group__count" aria-live="polite"></span>
-      </p>
-      <div class="menu__grid menu__grid--two" id="grid-milanesas"></div>
+          <a href="#" class="cart__cta" id="cartCta">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path d="M17.5 14.4l-2.6-1.3c-.4-.2-.8-.1-1 .2l-.9 1.1c-1.4-.7-2.6-1.9-3.3-3.3l1.1-.9c.3-.2.4-.6.2-1L9.6 6.5C9.4 6.1 9 6 8.6 6.2L6.2 7.3C5.9 7.4 5.7 7.8 5.8 8.2c.6 5.4 4.6 9.4 10 10 .4.1.7-.1.8-.5l1.1-2.3c.2-.4.1-.8-.2-1zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.5-1.2C8.8 21.5 10.4 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/>
+            </svg>
+            Pedir por WhatsApp
+          </a>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -229,25 +254,6 @@
     </div>
   </footer>
 
-  <!-- ============= STICKY CART ============= -->
-  <aside class="cart" id="cart" aria-live="polite" hidden>
-    <div class="cart__inner">
-      <div class="cart__summary">
-        <p class="cart__count"><span id="cartCount">0</span> ítems</p>
-        <p class="cart__total">
-          <span>Estimado</span>
-          <strong id="cartTotal">Gs. 0</strong>
-        </p>
-      </div>
-      <a href="#" class="cart__cta" id="cartCta">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-          <path d="M17.5 14.4l-2.6-1.3c-.4-.2-.8-.1-1 .2l-.9 1.1c-1.4-.7-2.6-1.9-3.3-3.3l1.1-.9c.3-.2.4-.6.2-1L9.6 6.5C9.4 6.1 9 6 8.6 6.2L6.2 7.3C5.9 7.4 5.7 7.8 5.8 8.2c.6 5.4 4.6 9.4 10 10 .4.1.7-.1.8-.5l1.1-2.3c.2-.4.1-.8-.2-1zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.5-1.2C8.8 21.5 10.4 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/>
-        </svg>
-        Pedir por WhatsApp
-      </a>
-    </div>
-  </aside>
-
   <!-- ============= MODAL CHECKOUT ============= -->
   <dialog class="modal" id="checkoutModal" aria-labelledby="modalTitle">
     <form class="modal__dialog" id="checkoutForm" novalidate>
@@ -255,7 +261,7 @@
 
       <p class="modal__eyebrow">último paso</p>
       <h3 id="modalTitle" class="modal__title">Casi listo, <em>contame</em>:</h3>
-      <p class="modal__subtitle">Decinos a nombre de quién es y a qué hora pasás. Listo, se abre WhatsApp con todo escrito.</p>
+      <p class="modal__subtitle">Decinos tu nombre, un número de contacto y a qué hora pasás. Listo, se abre WhatsApp con todo escrito.</p>
 
       <div class="modal__field">
         <label for="customerName">Tu nombre</label>
@@ -281,15 +287,19 @@
         <p class="modal__hint">Horario de atención: 07:00 – 21:00.</p>
       </div>
       <div class="modal__field">
-        <label for="telefonNumber">¿Tenés algún número de contacto?</label>
+        <label for="customerPhone">¿Tenés un número de contacto?</label>
         <input
-          type="int"
-          id="telefonNumber"
+          type="tel"
+          id="customerPhone"
           required
-          autocomplete="telefon"
-          placeholder="Ej. 0991654357"
-          maxlength="15"
+          inputmode="tel"
+          autocomplete="tel"
+          placeholder="Ej. 0991 654 357"
+          maxlength="20"
+          pattern="[0-9+\-\s()]{6,}"
         />
+        <p class="modal__hint">Por si tenemos que confirmarte algo del pedido.</p>
+      </div>
 
       <div class="modal__summary" id="modalSummary"></div>
 
